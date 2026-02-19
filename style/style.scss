@@ -1,0 +1,919 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./_variable.scss";
+
+body {
+  background-color: white;
+  font-family: "Jost", sans-serif;
+}
+.custom_container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+  @include xxl {
+    padding: 0 60px;
+  }
+  @include sm {
+    padding: 0 20px;
+  }
+}
+.green_text {
+  color: #abca37;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @include xxl {
+    font-size: 12px;
+  }
+}
+.main_title_text {
+  color: #292929;
+  font-size: 39px;
+  font-weight: 700;
+  @include xxl {
+    font-size: 30px;
+  }
+  @include xl {
+    font-size: 24px;
+  }
+  @include sm {
+    font-size: 20px;
+  }
+}
+.sub_title_text {
+  color: #292929;
+  font-size: 20px;
+  font-weight: 700;
+  @include xxl {
+    font-size: 16px;
+  }
+}
+.contact_title_text {
+  color: #292929;
+  font-size: 25px;
+  font-weight: 400;
+  @include lg {
+    font-size: 18px;
+  }
+}
+.pera_text {
+  color: #868686;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  @include xxl {
+    font-size: 12px;
+  }
+}
+.section_gap {
+  padding: 80px 0;
+  @include xl {
+    padding: 40px 0;
+  }
+  @include sm {
+    padding: 20px 0;
+  }
+}
+.whats-app-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.main_section {
+  // background-image: url("../images/main_bg_overlay.png");
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  padding-bottom: 80px;
+  position: relative;
+  @include xl {
+    padding-bottom: 40px;
+  }
+  @include sm {
+    padding-bottom: 20px;
+  }
+}
+.aboutus_hero_section {
+  background-image: url("../images/overlay_fruite_bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  background-position: bottom;
+}
+
+/* ---------- GRID ---------- */
+.grid {
+  position: absolute;
+  inset: 0;
+  // background-image:
+  //     linear-gradient(#d8e3f7 1px, transparent 1px),
+  //     linear-gradient(90deg,#d8e3f7 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.6;
+}
+
+/* ---------- CORNER DOTS ---------- */
+.check-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(circle at 0 0, #fac62a 3px, transparent 4px),
+    radial-gradient(circle at 80px 0, #fac62a 3px, transparent 4px),
+    radial-gradient(circle at 0 80px, #fac62a 3px, transparent 4px),
+    radial-gradient(circle at 80px 80px, #fac62a 3px, transparent 4px);
+
+  background-size: 80px 80px;
+
+  mask-image: radial-gradient(
+    circle var(--size, 0px) at var(--x, 0px) var(--y, 0px),
+    black 40%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle var(--size, 0px) at var(--x, 0px) var(--y, 0px),
+    black 40%,
+    transparent 80%
+  );
+
+  transition: all 0.25s ease;
+}
+
+/* ---------- ICONS ---------- */
+.icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  mask-image: radial-gradient(
+    circle var(--size, 0px) at var(--x, 0px) var(--y, 0px),
+    black 40%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle var(--size, 0px) at var(--x, 0px) var(--y, 0px),
+    black 40%,
+    transparent 80%
+  );
+}
+
+/* icon style */
+.icon {
+  position: absolute;
+  width: 70px;
+  opacity: 0.9;
+  animation: float 6s ease-in-out infinite;
+
+}
+
+/* ---- TOP LEFT ---- */
+.icon:nth-child(1){ top:5%; left:6%; transform:rotate(-15deg); }
+.icon:nth-child(2){ top:15%; left:18%; transform:rotate(12deg); }
+
+/* ---- TOP RIGHT ---- */
+.icon:nth-child(3){ top:8%; right:10%; transform:rotate(-10deg); }
+.icon:nth-child(4){ top:20%; right:4%; transform:rotate(18deg); }
+
+/* ---- BOTTOM LEFT ---- */
+.icon:nth-child(5){ bottom:10%; left:8%; transform:rotate(8deg); }
+.icon:nth-child(6){ bottom:18%; left:20%; transform:rotate(-14deg); }
+
+/* ---- BOTTOM RIGHT ---- */
+.icon:nth-child(7){ bottom:12%; right:12%; transform:rotate(16deg); }
+.icon:nth-child(8){ bottom:22%; right:5%; transform:rotate(-12deg); }
+
+/* floating animation */
+@keyframes float{
+    0%{ transform:translateY(0px) rotate(var(--r,0deg)); }
+    50%{ transform:translateY(-15px) rotate(var(--r,0deg)); }
+    100%{ transform:translateY(0px) rotate(var(--r,0deg)); }
+}
+
+/* icon positions */
+// .i1 {
+//   top: 10%;
+//   left: 10%;
+// }
+// .i2 {
+//   top: 60%;
+//   left: 10%;
+// }
+// .i3 {
+//   top: 35%;
+//   right: 20%;
+// }
+// .i4 {
+//   bottom: 15%;
+//   right: 10%;
+// }
+///..............error in navbar....................
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  .main-navbar {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 16px;
+  }
+
+  .navbar {
+    padding: 16px 0;
+    position: relative;
+  }
+
+  .navbar-brand img {
+    max-height: 45px;
+    @include sm {
+      max-height: 30px;
+    }
+  }
+
+  .nav-link {
+    color: #222;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.active {
+      color: #7dba4e;
+    }
+    @include xxl {
+      font-size: 14px;
+    }
+  }
+
+  .header-btn {
+    .contact_btn {
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-weight: 600;
+      background-color: #7dba4e;
+      // background-color: #ff9a1f;
+      border: none;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #7dba4e;
+      }
+      @include xxl {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.navbar-toggler-icon {
+  width: 25px !important;
+  height: 20px !important;
+  @include sm {
+    width: 20px !important;
+    height: 15px !important;
+  }
+}
+.navbar-toggler {
+  border: none !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    margin: 0 20px;
+
+    .navbar-collapse {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .nav-link {
+      margin: 0px 0px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .header-btn {
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+}
+
+//   ............. hero section...............
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+  padding: 100px 0;
+  z-index: 1;
+  position: relative;
+  @include lg {
+    padding-top: 50px;
+  }
+  @include sm {
+    padding-top: 10px;
+  }
+  &.aboutus_section {
+    min-height: 350px;
+    @include lg {
+      min-height: 300px;
+    }
+  }
+  .main_heading {
+    font-size: 69px;
+    font-weight: 700;
+    text-align: center;
+    @include xxl {
+      font-size: 56px;
+    }
+    @include xl {
+      font-size: 48px;
+    }
+    @include lg {
+      font-size: 40px;
+    }
+    @include md {
+      font-size: 32px;
+    }
+    @include sm {
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
+  }
+  .main_ac_heading {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    @include xxl {
+      font-size: 40px;
+    }
+    @include lg {
+      font-size: 32px;
+    }
+  }
+  .main_display_img {
+    // background-image: url('../images/yellow_bg.png');
+    // background-repeat: no-repeat;
+    .bottle_img {
+      max-width: 776px;
+      max-height: 776px;
+      @include xl {
+        max-width: 650px;
+        max-height: 650px;
+      }
+      @include lg {
+        max-width: 500px;
+        max-height: 500px;
+      }
+      @include md {
+        max-width: 400px;
+        max-height: 400px;
+      }
+      @include sm {
+        max-width: 300px;
+        max-height: 300px;
+      }
+    }
+  }
+}
+
+// ............what-we-are...................
+.about_section {
+  background-image: url("../images/palm-leaves-bg.jpg");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 30% auto;
+}
+.about_we_section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include lg {
+    flex-direction: column;
+  }
+  .about_details_section {
+    padding: 48px 80px 48px 16px;
+    max-width: 600px;
+    @include xl {
+      padding: 48px 40px 48px 16px;
+    }
+    @include lg {
+      padding: 20px;
+    }
+  }
+  .about_image {
+    position: relative;
+    img {
+      max-width: 684px;
+      border-radius: 12px;
+      @include xxl {
+        max-width: 500px;
+      }
+      @include xl {
+        max-width: 450px;
+      }
+      @include sm {
+        max-width: 280px;
+      }
+    }
+    // .mix_fruite_img {
+    //   position: absolute;
+    //   // max-width: 492px;
+    //   // right: -90;
+    //   // bottom: -140;
+    //       max-width: 430px;
+    // right: -45px;
+    // bottom: -140;
+    //   @include xxl {
+    //     max-width: 350px;
+    //   }
+    // }
+  }
+}
+.product_ul_list {
+  margin: 40px 0 0 0;
+  padding: 0;
+  @include lg {
+    margin: 28px 0 0 0;
+  }
+  .product_li_list {
+    list-style: none;
+    margin: 20px 0;
+    .product_fresh_info {
+      display: flex;
+      align-items: start;
+      gap: 15px;
+      .info_vector_img {
+        background-color: #abca37;
+        border-radius: 50%;
+        padding: 16px;
+        @include xxl {
+          padding: 12px;
+        }
+        @include sm {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
+//..............Featured Product.......................
+.Featured_product {
+  margin: 0 auto;
+  .flavour_detail {
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include xl {
+      padding: 80px 0;
+    }
+    @include md {
+      flex-direction: column;
+      gap: 60px;
+    }
+    .flavour_card {
+      position: relative;
+      .price_tag {
+        position: absolute;
+        left: -93px;
+        top: -26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 130px;
+        min-height: 130px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+        transform: rotate(-20deg);
+        transition: transform 0.6s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          transform: rotate(0deg);
+        }
+        @include xxl {
+          min-width: 100px;
+          min-height: 100px;
+        }
+        @include xl {
+          min-width: 80px;
+          min-height: 80px;
+          left: -60px;
+          top: -5px;
+        }
+        @include lg {
+          min-width: 60px;
+          min-height: 60px;
+        }
+        @include sm {
+          left: -50px;
+          top: 15px;
+        }
+        .pr_value {
+          color: #abca37;
+          font-size: 40px;
+          font-weight: 700;
+          text-align: center;
+          margin: 0;
+          @include xxl {
+            font-size: 34px;
+          }
+          @include xl {
+            font-size: 28px;
+          }
+          @include xl {
+            font-size: 22px;
+          }
+        }
+        .pr_volume {
+          color: #868686;
+          font-size: 12px;
+          font-weight: 600;
+          text-align: center;
+          margin: 0;
+          @include lg {
+            font-size: 10px;
+          }
+        }
+      }
+      .f_crd_img {
+        .bottle_img {
+          max-height: 500px;
+          max-width: 360px;
+          transform: rotate(0deg);
+          transition: transform 0.6s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            transform: rotate(-10deg) scale(1.1);
+          }
+          @include xxl {
+            max-height: 400px;
+          }
+          @include xl {
+            max-height: 350px;
+          }
+          @include lg {
+            max-height: 250px;
+          }
+          @include md {
+            max-height: 400px;
+          }
+          @include sm {
+            max-height: 300px;
+          }
+        }
+      }
+      .fruit_img {
+        position: absolute;
+        right: -80px;
+        bottom: -100px;
+        img {
+          width: 300px;
+          &.mango_img {
+            width: 250px;
+            @include xxl {
+              width: 200px;
+            }
+            @include xl {
+              width: 150px;
+            }
+            @include lg {
+              width: 100px;
+            }
+            @include md {
+              width: 200px;
+            }
+          }
+        }
+        @include xxl {
+          img {
+            width: 250px;
+          }
+          bottom: -80px;
+        }
+        @include xl {
+          img {
+            width: 200px;
+          }
+          bottom: -50px;
+        }
+        @include xl {
+          img {
+            width: 150px;
+          }
+          bottom: -35px;
+          right: -70px;
+        }
+        @include md {
+          img {
+            width: 250px;
+          }
+          bottom: -30px;
+        }
+      }
+    }
+  }
+}
+// ............our store css................
+.our_store_details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include xl {
+    gap: 24px;
+  }
+  @include md {
+    flex-direction: column;
+  }
+  .store_image_info {
+    max-width: 600px;
+    img {
+      width: -webkit-fill-available;
+    }
+    @include xxl {
+      max-width: 500px;
+    }
+    @include xl {
+      max-width: 400px;
+    }
+    @include lg {
+      max-width: 300px;
+    }
+    @include md {
+      order: 2;
+    }
+  }
+  .store_details_info {
+    max-width: 550px;
+    @include md {
+      order: 1;
+    }
+  }
+}
+//.........motivational section..............
+.motivational_section {
+  background-image: url("../images/neacter_background_img.png");
+  background-repeat: repeat;
+  background-size: cover;
+  padding: 120px 0px;
+  background-position: center;
+  @include lg {
+    background-position: right;
+  }
+
+  .motivation_line {
+    font-size: 76px;
+    font-weight: 700;
+    color: white;
+    max-width: 600px;
+    @include xxl {
+      font-size: 56px;
+    }
+    @include xl {
+      font-size: 48px;
+    }
+    @include lg {
+      font-size: 36px;
+    }
+  }
+}
+
+//.............why choose us................
+.choose_company {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  gap: 50px;
+  // padding: 100px 40px 0px 40px;
+  @include lg {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .company_details {
+    width: 70%;
+    @include sm {
+      width: 100%;
+    }
+  }
+}
+//..........footer_section............
+.footer_section {
+  background-color: #9abf2f;
+}
+
+/* Footer Wrapper */
+.happy-footer {
+  // background-color: #a9cf3a;
+  background-color: #9abf2f;
+  padding: 100px 20px 40px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  @include md {
+    padding: 80px 20px 40px;
+  }
+}
+
+/* Content Container */
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  @include xxl {
+    font-size: 40px;
+  }
+  @include lg {
+    font-size: 34px;
+  }
+  @include sm {
+    font-size: 28px;
+  }
+}
+
+.footer-logo span {
+  color: #ffd94d;
+}
+
+/* Tagline */
+.footer-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  @include xxl {
+    font-size: 16px;
+  }
+  @include md {
+    font-size: 14px;
+  }
+}
+
+/* Description */
+.footer-text {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  @include xxl {
+    font-size: 12px;
+  }
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: #ffffff;
+  color: #a9cf3a;
+}
+
+/* Divider Line */
+.footer-divider {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0 auto 25px;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.85;
+  @include xxl {
+    font-size: 10px;
+  }
+}
+
+// ..........mission_details.....................
+
+.mission_details {
+  background-color: #f5f4f5;
+  .mission_cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+
+    @include sm {
+      flex-direction: column;
+    }
+    .mission_card {
+      padding: 24px 40px;
+      border-radius: 18px;
+      max-width: 600px;
+
+      .white_text {
+        color: #fff;
+      }
+      &.white_card {
+        background-color: #fff;
+        order: 2;
+      }
+      &.green_card {
+        order: 1;
+        background-color: #9abf2f;
+      }
+      .icon_logos {
+        background-color: #9abf2f;
+        border-radius: 50%;
+        padding: 12px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 14px;
+        &.green_round {
+          background-color: #fff;
+        }
+        img {
+          width: 40px;
+        }
+        @include md {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      @include md {
+        padding: 20px;
+      }
+      @include lg {
+        width: 50%;
+      }
+      @include sm {
+        width: 100%;
+      }
+    }
+    @include md {
+      gap: 20px;
+    }
+  }
+}
+
+//..............contact_section...............
+.contact_section {
+  .contact_card {
+    // border: 1px solid black;
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    padding: 24px 40px;
+    border-radius: 12px;
+  }
+  .contact_side_img {
+    img {
+      max-width: 500px;
+      @include lg {
+        max-width: 350px;
+      }
+      @include md {
+        display: none;
+      }
+      @include sm {
+        display: none;
+      }
+    }
+  }
+}

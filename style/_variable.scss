@@ -1,0 +1,42 @@
+
+
+// break points
+
+$mediaSizes: (
+  'xs': 320px,
+  'sm': 576px,  
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1440px
+);
+
+@mixin sm {
+  @media (max-width: map-get($mediaSizes, 'sm')) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: map-get($mediaSizes, 'md')) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: map-get($mediaSizes, 'lg')) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: map-get($mediaSizes, 'xl')) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (max-width: map-get($mediaSizes, 'xxl')) {
+    @content;
+  }
+}
