@@ -246,6 +246,7 @@ body {
   background: white;
   border-radius: 8px;
   padding: 10px 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .main-header .navbar {
   padding: 16px 0;
@@ -388,6 +389,7 @@ body {
   .hero-section .main_heading {
     font-size: 24px;
     margin-bottom: 50px;
+    margin-top: 120px;
   }
 }
 .hero-section .main_ac_heading {
