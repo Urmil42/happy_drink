@@ -95,7 +95,8 @@ body {
   }
 }
 .aboutus_hero_section {
-  background-image: url("../images/overlay_fruite_bg.png");
+  // background-image: url("../images/overlay_fruite_bg.png");
+  background-image: url("../images/mix_fruite_bg.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -168,30 +169,67 @@ body {
   width: 70px;
   opacity: 0.9;
   animation: float 6s ease-in-out infinite;
-
 }
 
 /* ---- TOP LEFT ---- */
-.icon:nth-child(1){ top:5%; left:6%; transform:rotate(-15deg); }
-.icon:nth-child(2){ top:15%; left:18%; transform:rotate(12deg); }
+.icon:nth-child(1) {
+  top: 5%;
+  left: 6%;
+  transform: rotate(-15deg);
+}
+.icon:nth-child(2) {
+  top: 15%;
+  left: 18%;
+  transform: rotate(12deg);
+}
 
 /* ---- TOP RIGHT ---- */
-.icon:nth-child(3){ top:8%; right:10%; transform:rotate(-10deg); }
-.icon:nth-child(4){ top:20%; right:4%; transform:rotate(18deg); }
+.icon:nth-child(3) {
+  top: 8%;
+  right: 10%;
+  transform: rotate(-10deg);
+}
+.icon:nth-child(4) {
+  top: 20%;
+  right: 4%;
+  transform: rotate(18deg);
+}
 
 /* ---- BOTTOM LEFT ---- */
-.icon:nth-child(5){ bottom:10%; left:8%; transform:rotate(8deg); }
-.icon:nth-child(6){ bottom:18%; left:20%; transform:rotate(-14deg); }
+.icon:nth-child(5) {
+  bottom: 10%;
+  left: 8%;
+  transform: rotate(8deg);
+}
+.icon:nth-child(6) {
+  bottom: 18%;
+  left: 20%;
+  transform: rotate(-14deg);
+}
 
 /* ---- BOTTOM RIGHT ---- */
-.icon:nth-child(7){ bottom:12%; right:12%; transform:rotate(16deg); }
-.icon:nth-child(8){ bottom:22%; right:5%; transform:rotate(-12deg); }
+.icon:nth-child(7) {
+  bottom: 12%;
+  right: 12%;
+  transform: rotate(16deg);
+}
+.icon:nth-child(8) {
+  bottom: 22%;
+  right: 5%;
+  transform: rotate(-12deg);
+}
 
 /* floating animation */
-@keyframes float{
-    0%{ transform:translateY(0px) rotate(var(--r,0deg)); }
-    50%{ transform:translateY(-15px) rotate(var(--r,0deg)); }
-    100%{ transform:translateY(0px) rotate(var(--r,0deg)); }
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-15px) rotate(var(--r, 0deg));
+  }
+  100% {
+    transform: translateY(0px) rotate(var(--r, 0deg));
+  }
 }
 
 /* icon positions */
@@ -322,8 +360,13 @@ body {
   padding: 100px 0;
   z-index: 1;
   position: relative;
+  text-align: center;
+  // overflow: hidden;
   @include lg {
-    padding-top: 50px;
+    padding: 60px 0;
+  }
+  @include md {
+    padding: 60px 0;
   }
   @include sm {
     padding-top: 10px;
@@ -338,6 +381,9 @@ body {
     font-size: 69px;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 100px;
+    z-index: 1;
+    position: relative;
     @include xxl {
       font-size: 56px;
     }
@@ -346,6 +392,8 @@ body {
     }
     @include lg {
       font-size: 40px;
+      margin-top: 100px;
+      margin-bottom: 60px;
     }
     @include md {
       font-size: 32px;
@@ -367,29 +415,151 @@ body {
       font-size: 32px;
     }
   }
-  .main_display_img {
-    // background-image: url('../images/yellow_bg.png');
-    // background-repeat: no-repeat;
-    .bottle_img {
-      max-width: 776px;
-      max-height: 776px;
-      @include xl {
-        max-width: 650px;
-        max-height: 650px;
-      }
-      @include lg {
-        max-width: 500px;
-        max-height: 500px;
-      }
-      @include md {
-        max-width: 400px;
-        max-height: 400px;
-      }
-      @include sm {
-        max-width: 300px;
-        max-height: 300px;
-      }
-    }
+}
+
+// ....................hero section bottle aniation...................................
+.main_display_img {
+  position: relative;
+  height: 420px;
+  @include sm {
+    height: 300px;
+  }
+}
+
+.yellow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  z-index: 0;
+  // @include sm{
+  //   top: 30%;
+  // }
+}
+
+.yellow-bg img {
+  width: 650px;
+  @include lg {
+    width: 580px;
+  }
+  @include md {
+    width: 460px;
+  }
+  @include sm {
+    width: 330px;
+  }
+}
+
+.yellow-bg.show {
+  animation: bgZoom 1.2s ease forwards;
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Wrapper controls position */
+.bottle-wrap {
+  position: absolute;
+  top: -500px;
+  opacity: 0;
+}
+
+/* Final positions */
+.bottle-left {
+  left: 9%;
+  z-index: 2;
+  @include xxl {
+    left: 9%;
+  }
+  @include xl {
+    left: 4%;
+  }
+  @include lg {
+    left: 4%;
+  }
+}
+
+.bottle-center {
+  left: 33%;
+  transform: translateX(-50%);
+  z-index: 3;
+  @include xxl {
+    left: 33%;
+  }
+  @include xl {
+    left: 33%;
+  }
+  @include lg {
+    left: 33%;
+  }
+  @include md {
+    left: 31%;
+  }
+}
+
+.bottle-right {
+  right: 10%;
+  z-index: 2;
+  @include xxl {
+    right: 10%;
+  }
+  @include xl {
+    right: 2%;
+  }
+  @include lg {
+    right: 2%;
+  }
+}
+
+/* Bottle image */
+.bottle {
+  width: 270px;
+  @include xxl {
+    width: 220px;
+  }
+  @include lg {
+    width: 180px;
+  }
+  @include md {
+    width: 160px;
+  }
+  @include sm {
+    width: 120px;
+  }
+}
+
+/* Animation */
+.bottle-wrap.show {
+  animation: dropSmooth 0.9s ease forwards;
+}
+
+@keyframes dropSmooth {
+  0% {
+    top: -500px;
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  60% {
+    top: 20px;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -676,6 +846,9 @@ body {
   background-position: center;
   @include lg {
     background-position: right;
+  }
+  @include sm {
+    padding: 32px 0px;
   }
 
   .motivation_line {
