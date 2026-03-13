@@ -82,7 +82,6 @@ body {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  letter-spacing: 0.5px;
 }
 @media (max-width: 1440px) {
   .pera_text {
